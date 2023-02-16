@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta stuff -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://ikrdev.github.io/TicTacToeJS/style.css" />
+    <meta name="google-site-verification" content="lRQXyR9e33-Ktjl_fwmLr4cOnbGZdpYwir08E5pOW94" /> <!-- Google -->
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+    <title>Tic Tac Toe</title>
+</head>
+
+<body>
+    <div class="flexCenter" id="titlediv">
+        <h1 id="title">Tic Tac Toe</h1>
+        <!--<div class="break"></div>-->
+        <!--<h2 id="credit">By Iker</h2>-->
+    </div>
+
+    <!-- Tic Tac Toe grid -->
+    <div class="flexCenter" id="gridContainer">
+        <h2 id="winner"></h2>
+        <div class="break"></div>
+        <!-- Game grid is a 3x3 table, with each cell (td/Table Data) containing an empty button-->
+        <table>
+            <tr class="tictacrow row1 oddrow" id="row1">
+                <td class="tictaccell cell1 oddcell" id="cell1-1"><button class="tictacbtn" id="btn1-10"></button></td>
+                <td class="tictaccell cell2 evencell" id="cell1-2"><button class="tictacbtn" id="btn1-21"></button></td>
+                <td class="tictaccell cell3 oddcell" id="cell1-3"><button class="tictacbtn" id="btn1-32"></button></td>
+            </tr>
+            <tr class="tictacrow row2 evenrow" id="row2">
+                <td class="tictaccell cell1 oddcell" id="cell2-1"><button class="tictacbtn" id="btn2-13"></button></td>
+                <td class="tictaccell cell2 evencell" id="cell2-2"><button class="tictacbtn" id="btn2-24"></button></td>
+                <td class="tictaccell cell3 oddcell" id="cell2-3"><button class="tictacbtn" id="btn2-35"></button></td>
+            </tr>
+            <tr class="tictacrow row3 oddrow" id="row3">
+                <td class="tictaccell cell1 oddcell" id="cell3-1"><button class="tictacbtn" id="btn3-16"></button></td>
+                <td class="tictaccell cell2 evencell" id="cell3-2"><button class="tictacbtn" id="btn3-27"></button></td>
+                <td class="tictaccell cell3 oddcell" id="cell3-3"><button class="tictacbtn" id="btn3-38"></button></td>
+            </tr>
+        </table>
+    </div>
+    
+    <!-- Displays -->
+    <div class="flexCenter" id="botdiv">
+        <!-- Win Stats -->
+        <div id="win-div">
+            <h3 class="win-display" id="x-wins">X Wins: 0</h3>
+            <h3 class="win-display" id="draws">Draws: 0</h3>
+            <h3 class="win-display" id="o-wins">O Wins: 0</h3>
+        </div>
+        <div class="break"></div>
+        <h3 id="rounds">Rounds: 0</h3>
+        <div class="break"></div>
+        <button id="rstbtn" class="statbtn">New Round</button>
+        <button id="reset" class="statbtn">Start New Game</button>
+        <div class="break"></div>
+        <button id="clearbtn" class="statbtn">Clear Board</button>
+        <button id="clearrounds" class="statbtn">Reset Rounds</button>
+        <div class="break"></div>
+        <!-- Debug buttons -->
+        <div id="debugCont" class="flexCenter">
+            <button id="XwinBtn" hidden>Simulate X Win</button>
+            <!--<div class="break"></div>-->
+            <button id="OwinBtn" hidden>Simulate O Win</button>
+            <!--<div class="break"></div>-->
+            <button id="DrawBtn" hidden>Simulate Draw</button>
+        </div>
+        <!-- Auto-restart -->
+        <label for="autostart">Restart Game Automatically: </label>
+        <input type="checkbox" id="autostart" />
+        <div class="break"></div>
+        <label id="autotimelabel" for="autotime" hidden>How long to wait inbetween games (0 = don't restart): </label>
+        <input type="number" min="0" max="3" step="0.1" id="autotime" value="0" hidden />
+        <div class="break"></div>
+        <label id="autoroundslabel" for="autorounds" hidden>Rounds (0 = infinite): </label>
+        <input type="number" min="0" max="30" step="1" id="autorounds" value="0"
+            oninput="document.getElementById('autorounds').value = Math.round(document.getElementById('autorounds').value)"
+            hidden />
+    </div>
+
+    <script src="https://ikrdev.github.io/TicTacToeJS/script.js"></script>
+</body>
+
+</html>

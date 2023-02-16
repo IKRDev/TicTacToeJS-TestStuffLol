@@ -1,0 +1,9 @@
+( FOR EACH SPACE)
+check if AI can win:
+    yas - make move
+    no - check if AI can block opponent:
+        yes - make move
+        no - evaluate spots:
+            evaluate each space AI can occupy based on if it helps AI win
+            evaluate each space AI can occupy based on if it blocks opponent
+            make move on highest ranked spot
